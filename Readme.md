@@ -1,7 +1,7 @@
 # AWS - Cloud Computing - Configuration of a Jumpbox
 
 ## Objective
-Create an environment with a public and a private subnet where the internet routing of the private subnet is done through a NAT instance.
+Create an environment with a public and a private subnet where the internet routing of the private subnet is done through a NAT instance, while the public network is routed through an Internet gateway.
 
 ![alt tag](https://docs.aws.amazon.com/vpc/latest/userguide/images/nat-instance-diagram.png)
 
