@@ -37,7 +37,7 @@ At this stage we need to configure the instances that will be part of the enviro
 
 ### 2.1 Configuring the NAT Instance
 
-Navigate to Amazon EC2 Dashboard, and click Launch instance, on the field defined for search type the string amzn-ami-vpc-nat (this will  provide a list for Amazon Linux AMIs available). Select the Community AMIs category, and choose one of the options presented and click on Select.
+Navigate to Amazon EC2 Dashboard, and click Launch instance, on the field defined for search type the string ami-00a9d4a05375b2763 (this will  provide a list for Amazon Linux AMIs available). Select the Community AMIs category, and choose one of the options presented and click on Select.
 
 On the Choose an Instance Type page, select the Free tier eligible, then choose Next: Configure Instance Details.
 
@@ -53,7 +53,7 @@ One additional step is to disable the source and destination check, and for this
 
 For the NAT instance, verify that this attribute is disabled. Otherwise, choose Yes, Disable.
 
-### 2.2 Configuring an EC2 Instance
+### 2.2 Configuring EC2 Instances
 
 Navigate to Amazon EC2 Dashboard, and click Launch instance, choose Amazon Linux 2 AMI (HVM), SSD Volume Type and click on Select.
 
@@ -66,6 +66,8 @@ Keep the default configuration for the Add Storage, then click Next Add Tags. On
 On the Configure Security Group page, select Create a new security group, and name it as Private SG, later on we will configure this group, so for now just choose Review and Launch.
 
 On the Review Instance Launch choose Launch. You're going to be asked to choose a key pair to launch your instance, choose if you want to create a new one or use an existing and click Launch Instances.
+
+Repeat the previous steps for 2.2 once more, but now configure it to be instantiated in the public subnet, and also create a new security group for it.
 
 ## 3. Networking and Security
 
