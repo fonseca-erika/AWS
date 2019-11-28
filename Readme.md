@@ -115,7 +115,7 @@ On the Subnet Associations tab, choose Edit, select the Associate check box for 
 
 In the VPC Dashboard, choose Security Groups, and then select the NATSG Security Group that you created previously. The details pane displays the details for the security group, plus tabs for working with its inbound and outbound rules.
 
-Add rules for inbound traffic using the Inbound Rules tab as follows, choose Edit and configure:
+Add rules for inbound traffic using the Inbound Rules tab as follows:
 
 Choose Add another rule, and select HTTP from the Type list. In the Source field, specify the IP address range of your private subnet.
 
@@ -126,8 +126,6 @@ Choose Add another rule, and select SSH from the Type list. In the Source field,
 Choose Save.
 
 Add rules for outbound traffic using the Outbound Rules tab as follows:
-
-Choose Edit.
 
 Choose Add another rule, and select HTTP from the Type list. In the Destination field, specify 0.0.0.0/0
 
@@ -146,8 +144,6 @@ Choose Add another rule, and select SSH from the Type list. In the Source field,
 Choose Save.
 
 Add rules for outbound traffic using the Outbound Rules tab as follows:
-
-Choose Edit.
 
 Choose Add another rule, and select All ICMP - IPv4 from the Type list. In the Destination field, specify 0.0.0.0/0
 
