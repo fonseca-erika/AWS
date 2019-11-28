@@ -7,7 +7,7 @@ Create an environment with a public and a private subnet where the internet rout
 
 ## Setting up the environment
 
-# 1. Creating the VPC and the subnets
+## 1. Creating the VPC and the subnets
 
 Open the Amazon console and search for VPC and access the VPC Dashboard, select Your VPCs in the menu, and click the blue button Create VPC. 
 
@@ -31,11 +31,11 @@ Configure the Public and the Private subnets indicating:
 
 At this stage you have not yet defined the configurations that differ the public and the private subnet, so let's do it in the next steps.
 
-# 2. Setting up the instances
+## 2. Setting up the instances
 
 At this stage we need to configure the instances that will be part of the environment.
 
-# 2.1 Configuring the NAT Instance
+### 2.1 Configuring the NAT Instance
 
 Navigate to Amazon EC2 Dashboard, and click Launch instance, on the field defined for search type the string amzn-ami-vpc-nat (this will  provide a list for Amazon Linux AMIs available). Select the Community AMIs category, and choose one of the options presented and click on Select.
 
@@ -53,7 +53,7 @@ One additional step is to disable the source and destination check, and for this
 
 For the NAT instance, verify that this attribute is disabled. Otherwise, choose Yes, Disable.
 
-# 2.2 Configuring an EC2 Instance
+### 2.2 Configuring an EC2 Instance
 
 Navigate to Amazon EC2 Dashboard, and click Launch instance, choose Amazon Linux 2 AMI (HVM), SSD Volume Type and click on Select.
 
@@ -67,15 +67,15 @@ On the Configure Security Group page, select Create a new security group, and na
 
 On the Review Instance Launch choose Launch. You're going to be asked to choose a key pair to launch your instance, choose if you want to create a new one or use an existing and click Launch Instances.
 
-# 3. Networking and Security
+## 3. Networking and Security
 
-# 3.1 Configuring the Internet Gateway
+### 3.1 Configuring the Internet Gateway
 
 In the navigation pane for the VPC Dashboard, choose Internet Gateways, and then choose Create internet gateway. Name your internet gateway, and then choose Create.
 
 Select the internet gateway that you just created in the list, and then choose Actions, Attach to VPC. Select the VPC that you created from the list, and then choose Attach.
 
-# 3.2 Setting an Elastic IP
+### 3.2 Setting an Elastic IP
 
 In the navigation pane for the VPC Dashboard, choose Elastic IPs, and then choose Allocate new address. Choose Allocate.
 
@@ -83,7 +83,7 @@ Select the Elastic IP address from the list, and then choose Actions, Associate 
 
 Select the network interface resource, then select the network interface for the NAT instance that you created. Select the address to associate the Elastic IP with from the Private IP list, and then choose Associate.
 
-# 3.2 Configuring the route table for the public network
+### 3.2 Configuring the route table for the public network
 
 In the navigation pane for the VPC Dashboard, choose Route Tables, and then choose Create Route Table.
 
@@ -97,7 +97,7 @@ For IPv4 traffic, specify 0.0.0.0/0 in the Destination box, and select the inter
 
 On the Subnet Associations tab, choose Edit, select the Associate check box for the public subnet that you created previously, and then choose Save.
 
-# 3.3 Configuring the route table for the private network
+### 3.3 Configuring the route table for the private network
 
 In the navigation pane for the VPC Dashboard, choose Route Tables, and then choose Create Route Table.
 
@@ -111,7 +111,7 @@ For IPv4 traffic, specify 0.0.0.0/0 in the Destination box, and select the NAT i
 
 On the Subnet Associations tab, choose Edit, select the Associate check box for the private subnet that you created previously, and then choose Save. (By doing this you are sending the traffic of Internet requests to the NAT gateway.)
 
-# 3.4 Configuring the security group for the NAT Instance
+### 3.4 Configuring the security group for the NAT Instance
 
 In the VPC Dashboard, choose Security Groups, and then select the NATSG Security Group that you created previously. The details pane displays the details for the security group, plus tabs for working with its inbound and outbound rules.
 
@@ -133,7 +133,7 @@ Choose Add another rule, and select HTTPS from the Type list. In the Destination
 
 Choose Save.
 
-# 3.4 Configuring the security group for the Instance in the Private Subnet
+### 3.4 Configuring the security group for the Instance in the Private Subnet
 
 In the VPC Dashboard, choose Security Groups, and then select the Private SG that you created previously. The details pane displays the details for the security group, plus tabs for working with its inbound and outbound rules.
 
