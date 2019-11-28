@@ -45,9 +45,9 @@ On the Configure Instance Details page, select the VPC you created from the Netw
 
 Keep the default configuration for the Add Storage, then click Next Add Tags. On the Tags screen also keep the default and choose Next: Configure Security Group.
 
-On the Configure Security Group page, select the Select an existing security group option, and select the NATSG security group that you created. Choose Review and Launch.
+On the Configure Security Group page, select Create a new security group, and name it as NATSG security group, later on we will configure this group, so for now just choose Review and Launch.
 
-Review the settings that you've chosen. Make any changes that you need, and then choose Launch to choose a key pair and launch your instance.
+On the Review Instance Launch choose Launch. You're going to be asked to choose a key pair to launch your instance, choose if you want to create a new one or use an existing and click Launch Instances.
 
 (Optional) Connect to the NAT instance, make any modifications that you need, and then create your own AMI that's configured to run as a NAT instance. You can use this AMI the next time that you need to launch a NAT instance. For more information see Creating Amazon EBS-Backed AMIs in the Amazon EC2 User Guide for Linux Instances.
 
