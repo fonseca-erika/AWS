@@ -48,4 +48,23 @@ To guarantee that your Jupyter Notebook server will not
 be terminated when you close you session, and to run it in background you need to:
 nohup jupyter notebook --ip=0.0.0.0 &
 
+### 2.3 Configuring virtual environment
 
+Below there are the steps for configuring a virtual environment, that is useful to isolate different projects requirements, ans avoiding conflict among packages.
+
+First you need to install the virtualenv package that allows you to deal with virtual environment, to do so, type the following command:
+
+sudo pip3 install virtualenv
+
+The next step is to define the path to the system store the files of this new environment, in this example we are creating a directory (using mkdir) and attaching it to be the location of the new virtual environment that we want to create:
+
+mkdir my_env
+virtualenv my_env
+
+The next step is to activate this environment, and by doing so it can be accessed through the command line:
+
+source my_env/bin/activate
+
+To add the virtualenv as a jupyter kernel the following command must be run:
+
+ipython kernel install --name "my_env" --user
