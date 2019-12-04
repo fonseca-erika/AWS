@@ -39,3 +39,13 @@ Connect to the Ubuntu EC2 instance an run the following command line:
 
 sudo apt update
 
+
+To make your server reachable through internet you need to configue id
+jupyter notebook --ip=0.0.0.0
+
+
+To guarantee that your Jupyter Notebook server will not
+be terminated when you close you session, and to run it in background you need to:
+nohup jupyter notebook --ip=0.0.0.0 &
+
+
