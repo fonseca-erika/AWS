@@ -31,22 +31,40 @@ On the Configure Security Group page, choose Select an existing security group, 
 
 On the Review Instance Launch choose Launch. You're going to be asked to choose a key pair to launch your instance, choose if you want to create a new one or use an existing and click Launch Instances.
 
+In the navigation pane for the VPC Dashboard, choose Elastic IPs, and then select the Elastic IP address from the list, and then choose Actions, Associate address.
+
+Select the Instance option, then select the Ubuntu EC2 instance that you created, and then choose Associate.
+
 ### 2.2 Configuring the Jupyter Notebook server
 
-<i><b>Remark: </b> JupyterLab can be installed using conda or pip, and in this tutorial our alternative chosen is to use pip.</i>
+<i><b>Remark: </b> JupyterLab can be installed using conda or pip, and in this tutorial our alternative chosen is to use pip. Remember that pip is package that manages the installation of other packages written in Python.</i>
 
 Connect to the Ubuntu EC2 instance an run the following command line:
 
 sudo apt update
 
+Use the following command to check if python is installed on your environment:
 
-To make your server reachable through internet you need to configue id
-jupyter notebook --ip=0.0.0.0
+python3 --version
 
+If it's not installed, run the following command:
 
-To guarantee that your Jupyter Notebook server will not
-be terminated when you close you session, and to run it in background you need to:
-nohup jupyter notebook --ip=0.0.0.0 &
+sudo apt-get install python3
+
+It's necessary to import pip and after install Jupyter, as it's done i the following command lines:
+
+python3 -m pip install --upgrade pip
+python3 -m pip install jupyter
+
+To run the Jupyter notebook server you can use the following command line:
+
+nohup jupyter notebook --ip=0.0.0.0
+
+<i><b>Remark:</b> 
+- if you neglect the ip parameter the server will run only in the local host;
+- to guarantee that your Jupyter Notebook server will not be terminated when you close you ssh session, and to run it in background you need to:</i>
+
+Now, you can try to access your Jupyter Notebook server through your web browser, using the the port and token provided by the configuration. If it fails, try to review the security group configuration.
 
 ### 2.3 Configuring virtual environment
 
