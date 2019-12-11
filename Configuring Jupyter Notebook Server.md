@@ -51,10 +51,14 @@ If it's not installed, run the following command:
 
 sudo apt-get install python3
 
-It's necessary to import pip and after install Jupyter, as it's done i the following command lines:
+It's necessary to import pip and after install Jupyter, as it's done typing the following command lines:
 
+curl -O https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py --user
+
+sudo apt install python3-pip
 python3 -m pip install --upgrade pip
-python3 -m pip install jupyter
+python3 -m pip install jupyter --user
 
 To run the Jupyter notebook server you can use the following command line:
 
